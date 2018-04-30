@@ -8,9 +8,21 @@
 
   $offset: get-em-unit(map-get($roles-offsets, 'controllers'));
 
-  //--------------------------| Body
+
+  //--------------------------| Base
 
   padding: $offset;
+  background-color: map-get($reg-backgrounds, 'pale-silver');
+
+
+  //--------------------------| Flexbox
+
+  > .flex {
+    margin-top: $offset;
+  }
+
+
+  //--------------------------| Columns
 
   .column:not(:nth-child(2)) {
     flex: 1;
@@ -19,10 +31,6 @@
   .column:nth-child(2) {
     align-self: center;
     padding: 0 1em;
-  }
-
-  > .flex {
-    margin-top: $offset;
   }
 
   .column {

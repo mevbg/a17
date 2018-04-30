@@ -6,12 +6,11 @@
 
 #app {
   @include font-smoothing();
-  @include box-shadow(0 0 20px #ccc);
+  @include box-shadow(0 0 80em -2em map-get($reg-colors, 'dark-silver'));
 
   min-width: map-get($reg-screens, 'min');
   max-width: map-get($reg-screens, 'max');
   margin: 0 auto;
   font: map-get($roles-typo-font-weights, 'text') 1em map-get($roles-typo-font-families, 'text');
   text-align: center;
-  background-color: map-get($reg-backgrounds, 'pale-silver');
 }
