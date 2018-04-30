@@ -1,0 +1,293 @@
+{
+  "rooms": [
+    {
+      "name": "living_room",
+      "title": "Living room"
+    },
+    {
+      "name": "bedroom",
+      "title": "Bedroom"
+    },
+    {
+      "name": "kinder_room",
+      "title": "Kinder room"
+    },
+    {
+      "name": "bathroom_big",
+      "title": "Big bathroom"
+    },
+    {
+      "name": "bathroom_small",
+      "title": "Small bathroom"
+    },
+    {
+      "name": "closet",
+      "title": "Closet"
+    },
+    {
+      "name": "corridor",
+      "title": "Corridor"
+    },
+    {
+      "name": "balcony_living",
+      "title": "Living balcony"
+    },
+    {
+      "name": "balcony_kinder",
+      "title": "Kinder balcony"
+    }
+  ],
+
+  "devices": [
+    {
+      "name": "boiler",
+      "title": "Boiler"
+    },
+    {
+      "name": "hobs",
+      "title": "Hobs"
+    },
+    {
+      "name": "washing_machine",
+      "title": "Washing machine"
+    },
+    {
+      "name": "oven",
+      "title": "Oven"
+    },
+    {
+      "name": "dishwasher",
+      "title": "Dishwasher"
+    },
+    {
+      "name": "fridge",
+      "title": "Fridge"
+    },
+    {
+      "name": "aspirator",
+      "title": "Aspirator"
+    },
+    {
+      "name": "tv",
+      "title": "TV"
+    },
+    {
+      "name": "apple_tv",
+      "title": "AppleTV"
+    },
+    {
+      "name": "server",
+      "title": "Server"
+    }
+  ],
+
+  "switchers": [
+    {
+      "id": "level1_switch1",
+      "wings": 3,
+      "level": 1,
+      "label": "C32",
+      "role": {
+        "name": "main",
+        "title": "General switch"
+      }
+    },
+    {
+      "id": "level1_switch2",
+      "wings": 1,
+      "level": 1,
+      "label": "C10",
+      "features": ["lights"],
+      "role": {
+        "name": "lights",
+        "title": "Lights"
+      },
+      "rooms": [
+        "living_room",
+        "closet",
+        "balcony_living",
+        "bathroom_small"
+      ]
+    },
+    {
+      "id": "level1_switch3",
+      "wings": 1,
+      "level": 1,
+      "label": "C10",
+      "features": ["lights"],
+      "role": {
+        "name": "lights",
+        "title": "Lights"
+      },
+      "rooms": [
+        "corridor",
+        "bedroom",
+        "kinder_room",
+        "bathroom_big",
+        "balcony_kinder"
+      ]
+    },
+    {
+      "id": "level1_switch4",
+      "wings": 1,
+      "level": 1,
+      "label": "C16",
+      "role": {
+        "name": "unknown",
+        "title": "Unknown function"
+      }
+    },
+    {
+      "id": "level1_switch5",
+      "wings": 1,
+      "level": 1,
+      "label": "C16",
+      "role": {
+        "name": "cooking",
+        "title": "Cooking devices"
+      },
+      "rooms": [
+        "living_room"
+      ],
+      "devices": [
+        "hobs",
+        "oven"
+      ]
+    },
+    {
+      "id": "level1_switch6",
+      "wings": 1,
+      "level": 1,
+      "label": "C6",
+      "role": {
+        "name": "unknown",
+        "title": "Unknown function"
+      }
+    },
+
+    {
+      "id": "level2_switch1",
+      "wings": 2,
+      "level": 2,
+      "label": "C16",
+      "features": ["fat", "black", "outlets"],
+      "role": {
+        "name": "laundry",
+        "title": "Washing machine & dryer"
+      },
+      "rooms": [
+        "closet"
+      ],
+      "devices": [
+        "washing_machine"
+      ]
+    },
+    {
+      "id": "level2_switch2",
+      "wings": 2,
+      "level": 2,
+      "label": "C16",
+      "features": ["fat", "black"],
+      "role": {
+        "name": "boiler",
+        "title": "Boiler"
+      },
+      "rooms": [
+        "closet"
+      ],
+      "devices": [
+        "boiler"
+      ]
+    },
+    {
+      "id": "level2_switch3",
+      "wings": 2,
+      "level": 2,
+      "label": "C25",
+      "features": ["fat", "black"],
+      "role": {
+        "name": "unknown",
+        "title": "Unknown function"
+      }
+    },
+    {
+      "id": "level2_switch4",
+      "wings": 2,
+      "level": 2,
+      "label": "25A",
+      "features": ["fat", "outlets"],
+      "role": {
+        "name": "outlets",
+        "title": "All outlets"
+      }
+    },
+    {
+      "id": "level2_switch5",
+      "wings": 1,
+      "level": 2,
+      "label": "C16",
+      "features": ["outlets"],
+      "role": {
+        "name": "outlets",
+        "title": "Outlets"
+      },
+      "rooms": [
+        "living_room"
+      ],
+      "devices": [
+        "tv",
+        "apple_tv",
+        "server"
+      ]
+    },
+    {
+      "id": "level2_switch6",
+      "wings": 1,
+      "level": 2,
+      "label": "C16",
+      "features": ["outlets"],
+      "role": {
+        "name": "outlets",
+        "title": "Outlets"
+      },
+      "rooms": [
+        "living_room"
+      ],
+      "devices": [
+        "fridge",
+        "aspirator",
+        "dishwasher"
+      ]
+    },
+    {
+      "id": "level2_switch7",
+      "wings": 1,
+      "level": 2,
+      "label": "C16",
+      "features": ["outlets"],
+      "role": {
+        "name": "outlets",
+        "title": "Outlets"
+      },
+      "rooms": [
+        "corridor",
+        "kinder_room",
+        "bathroom_big"
+      ]
+    },
+    {
+      "id": "level2_switch8",
+      "wings": 1,
+      "level": 2,
+      "label": "C16",
+      "features": ["outlets"],
+      "role": {
+        "name": "outlets",
+        "title": "Outlets"
+      },
+      "rooms": [
+        "bedroom"
+      ]
+    }
+  ]
+}

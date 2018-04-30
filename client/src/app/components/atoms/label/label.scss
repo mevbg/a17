@@ -1,0 +1,10 @@
+// =========================| Label |========================= //
+
+
+
+//--------------------------| Body
+
+.pa-label {
+  font-size: map-get($roles-typo-font-sizes, 'label');
+  line-height: 2em;
+}

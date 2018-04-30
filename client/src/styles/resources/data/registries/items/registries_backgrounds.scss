@@ -1,0 +1,12 @@
+// =========================| Registries: Backgrounds |========================= //
+
+
+
+$reg-backgrounds: (
+
+  'white':       map-get($reg-colors, 'white'),
+  'black':       map-get($reg-colors, 'black'),
+  'pale-silver': map-get($reg-colors, 'pale-silver'),
+  'dirty-white': map-get($reg-colors, 'dirty-white')
+
+);

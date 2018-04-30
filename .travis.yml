@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+- node
+script:
+- npm install
+- npm run build
+- printf '.gitignore\ndeployed*' > client/dist/.gitignore
+- printf 'a17.martinmetodiev.com' > client/dist/CNAME
+- cp 'README.md' client/dist
+branches:
+  only:
+  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+deploy:
+- provider: releases
+  api_key:
+    secure: B0aqBL0r7VOifVMkgN4snDQiCdix8RqT0pa2ZN0r9rT/38AGD2iR+jxI8thaqZRv+goKM8Hq9GvH0XmRRdctXurqQ96TYseq5xDNt/EoRc/hM1QQWu5zLSX0l5F6RryJd9Mn4kWGBYvStJDHAgrEo/FEhAhhwyCWXDifejqou3bu6olGX6tbfkz2vfGc+/q96m98HHRNSS5GVsegKKmXer/H76x/bPePL0YO8FMJfAYf35jeH2E0WOmxPe/IVTfqurt/evAB3ISkEv9c7Hn8s1rL/+W0dpXF7LT9snhK9B6mNE6kiSShEaBiN5ywj3eI/bd1+NOruCsM/RNWkdsf4FiN42HlR1coOKxvu2FVwUYK+X9f4/woD5ePgSjOwnGWJlVXK3Nlv4DKzulxGWHQe9CPD5qMH33zkqoa4g+HOE4vY3QMcLrQFCF6BLHPLPoo1tvRZDyFB3xTnfgV5icgcL7plLOIc//Yna6EfJWhA5cEXtoLeH/oonKx//jcxuerGTHE+3RNc2hS/fFDenp3rvLcgc+JhmFipg8UMmv+SN4mKOEExMvKOfnipjBbpLLZdhmoslz5+tY73UYd34O4u7+K4oMKOYSP2AyLra2T6d5rMSpk9ZDJrg2IjXUY8wSJUeR4jrr7D62glKsup3L89CejvxD2+vQIH8XvW+T5gGg=
+  skip_cleanup: true
+  on:
+    tags: true
+- provider: pages
+  skip_cleanup: true
+  local_dir: client/dist
+  github_token:
+    secure: B0aqBL0r7VOifVMkgN4snDQiCdix8RqT0pa2ZN0r9rT/38AGD2iR+jxI8thaqZRv+goKM8Hq9GvH0XmRRdctXurqQ96TYseq5xDNt/EoRc/hM1QQWu5zLSX0l5F6RryJd9Mn4kWGBYvStJDHAgrEo/FEhAhhwyCWXDifejqou3bu6olGX6tbfkz2vfGc+/q96m98HHRNSS5GVsegKKmXer/H76x/bPePL0YO8FMJfAYf35jeH2E0WOmxPe/IVTfqurt/evAB3ISkEv9c7Hn8s1rL/+W0dpXF7LT9snhK9B6mNE6kiSShEaBiN5ywj3eI/bd1+NOruCsM/RNWkdsf4FiN42HlR1coOKxvu2FVwUYK+X9f4/woD5ePgSjOwnGWJlVXK3Nlv4DKzulxGWHQe9CPD5qMH33zkqoa4g+HOE4vY3QMcLrQFCF6BLHPLPoo1tvRZDyFB3xTnfgV5icgcL7plLOIc//Yna6EfJWhA5cEXtoLeH/oonKx//jcxuerGTHE+3RNc2hS/fFDenp3rvLcgc+JhmFipg8UMmv+SN4mKOEExMvKOfnipjBbpLLZdhmoslz5+tY73UYd34O4u7+K4oMKOYSP2AyLra2T6d5rMSpk9ZDJrg2IjXUY8wSJUeR4jrr7D62glKsup3L89CejvxD2+vQIH8XvW+T5gGg=
+  on:
+    tags: true

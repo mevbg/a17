@@ -1,0 +1,120 @@
+// =========================| Switch |========================= //
+
+
+
+.pa-switch {
+
+  //--------------------------| Variables
+
+  $wing-width: get-em-unit($roles-size-switch-width);
+  $lever-height: .6em;
+  $focus-color: map-get($reg-colors, 'graphite');
+  $shadow: 0 0 .4em $focus-color;
+  $transition: all map-get($roles-transitions, 'glow') ease-in-out;
+
+
+  //--------------------------| Base
+
+  @include border-radius(.15em);
+  @include transition($transition);
+
+  position: relative;
+  display: block;
+  height: get-em-unit($roles-size-switch-height);
+  //cursor: pointer;
+  border: 1px solid map-get($reg-colors, 'silver');
+
+
+  //--------------------------| Wings
+
+  @each $wing in 1 2 3 {
+    $gap: if($wing == 1, 0, $wing / 2);
+
+    &[data-wings='#{$wing}'] {
+      width: get-em-unit(($roles-size-switch-width + $gap) * $wing);
+    }
+  }
+
+
+  //--------------------------| Background
+
+  &:not(.black) {
+    @include background-image(map-get($reg-gradients, 'pale-silver'));
+  }
+
+  &.black {
+    @include background-image(map-get($reg-gradients, 'dark-silver'));
+  }
+
+
+  //--------------------------| Lever
+
+  .lever {
+    @include translateY(-#{$lever-height/2});
+    @include transition($transition);
+
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    width: $wing-width;
+    padding: 0 .14em;
+
+    .bar {
+      @include border-radius(.15em);
+
+      display: block;
+      height: 100%;
+    }
+  }
+
+  &:not(.fat) .lever {
+    height: $lever-height;
+  }
+
+  &.fat .lever {
+    height: $lever-height * 2;
+  }
+
+  &:not(.black) .lever .bar {
+    @include background-image(map-get($reg-gradients, 'orange'));
+  }
+
+  &.black .lever .bar {
+    @include background-image(map-get($reg-gradients, 'black'));
+  }
+
+  &[data-role='main'] .lever {
+    left: 0;
+    width: 100%;
+  }
+
+
+  //--------------------------| Label
+
+  .pa-meta {
+    position: absolute;
+    right: 0;
+    bottom: .1em;
+    left: 0;
+    text-align: center;
+  }
+
+
+  //--------------------------| States
+
+  //&:hover {
+  //  border-color: rgba($focus-color, .5);
+  //}
+
+  &.glow {
+    @include box-shadow($shadow);
+
+    border-color: $focus-color;
+
+    .lever {
+      @include translateY(-#{$lever-height * 1.5});
+    }
+  }
+
+
+} // .pa-switch
