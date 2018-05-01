@@ -26,7 +26,7 @@ const Switch = ({
   });
 
   return (
-    <a className={classes} data-wings={wings} data-role={role.name}>
+    <a className={classes} data-wings={wings} data-role={role.name} title={role.title}>
       <span className="lever"><span className="bar"></span></span>
       <Meta text={label} />
     </a>

@@ -4,6 +4,11 @@
 
 .pa-switch {
 
+  //--------------------------| Data
+
+  $roles: 'main' 'lights' 'outlets' 'unknown' 'cooking' 'laundry' 'boiler';
+
+
   //--------------------------| Variables
 
   $wing-width: get-em-unit($roles-size-switch-width);
@@ -100,19 +105,50 @@
   }
 
 
+  //--------------------------| Roles
+
+  @each $role in $roles {
+    $url: '../../../../icons/#{$role}.svg';
+
+    &[data-role='#{$role}'] {
+      &::before {
+        $size: .66em;
+
+        @include transition($transition);
+        @include translateX(-50%);
+        @include opacity(0);
+
+        position: absolute;
+        top: .2em;
+        left: 50%;
+        width: $size;
+        height: $size;
+        content: '';
+        background: url($url) center no-repeat;
+      }
+    }
+  }
+
+
   //--------------------------| States
 
-  //&:hover {
-  //  border-color: rgba($focus-color, .5);
-  //}
+  &:hover {
+    &::before {
+      @include opacity(.5);
+    }
+  }
 
   &.glow {
     @include box-shadow($shadow);
 
     border-color: $focus-color;
 
+    &::before {
+      @include opacity(.5);
+    }
+
     .lever {
-      @include translateY(-#{$lever-height * 1.5});
+      @include translateY(-#{$lever-height * 1.2});
     }
   }
 
