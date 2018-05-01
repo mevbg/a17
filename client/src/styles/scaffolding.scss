@@ -38,6 +38,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: map-get($reg-backgrounds, 'black');
+  -webkit-tap-highlight-color: rgba(map-get($reg-colors, 'black'), 0);
 }
 
 
