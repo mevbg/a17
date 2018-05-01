@@ -13,31 +13,39 @@
 
   //--------------------------| Base
 
-  @include border-radius(.2em);
   @include transition(all map-get($roles-transitions, 'glow') ease-in-out);
 
   display: inline-block;
-  padding: 0 1em;
-  font-size: $btn-font-size;
-  line-height: 2em;
-  color: $link-color;
+  padding: .1em 0;
   text-align: left;
   cursor: pointer;
-  background-color: map-get($reg-backgrounds, 'white');
+
+  > span {
+    @include border-radius(.2em);
+
+    display: block;
+    padding: 0 1em;
+    font-size: $btn-font-size;
+    line-height: 2em;
+    color: $link-color;
+    background-color: map-get($reg-backgrounds, 'white');
+  }
 
 
   //--------------------------| States
 
   &:hover,
   &.active {
-    color: $white-color;
+    > span {
+      color: $white-color;
+    }
   }
 
-  &:hover {
+  &:hover span {
     background-color: rgba($link-color, .7);
   }
 
-  &.active {
+  &.active span {
     background-color: $link-color;
   }
 

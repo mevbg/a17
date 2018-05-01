@@ -21,7 +21,9 @@ const Button = (props) => {
     <a className={classes} onClick={() => {
       props.handleClick(props.name);
     }}>
-      {props.title}
+      <span>
+        {props.title}
+      </span>
     </a>
   );
 };
