@@ -13,8 +13,6 @@
 
   //--------------------------| Base
 
-  @include transition(all map-get($roles-transitions, 'glow') ease-in-out);
-
   display: inline-block;
   padding: .1em 0;
   text-align: left;
@@ -22,6 +20,7 @@
   cursor: pointer;
 
   > span {
+    @include transition(all map-get($roles-transitions, 'glow') ease-in-out);
     @include border-radius(.2em);
 
     display: block;
