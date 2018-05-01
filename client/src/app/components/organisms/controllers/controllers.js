@@ -24,9 +24,8 @@ const Controllers = props => (
           <Label text='Device' />
           <ButtonGroup
             items={props.devices}
-            handleSelection={(selection) => {
-              props.handleSelection('devices', selection);
-            }}
+            category={'devices'}
+            handleSelection={props.handleSelection}
           />
         </div>
       </div>
@@ -40,9 +39,8 @@ const Controllers = props => (
           <Label text='Room' />
           <ButtonGroup
             items={props.rooms}
-            handleSelection={(selection) => {
-              props.handleSelection('rooms', selection);
-            }}
+            category={'rooms'}
+            handleSelection={props.handleSelection}
           />
         </div>
       </div>
