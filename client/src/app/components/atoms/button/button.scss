@@ -34,19 +34,20 @@
 
   //--------------------------| States
 
-  &:hover,
-  &.active {
-    > span {
-      color: $white-color;
+  @media (hover: hover) {
+    &:hover {
+      > span {
+        color: $white-color;
+        background-color: rgba($link-color, .7);
+      }
     }
   }
 
-  &:hover span {
-    background-color: rgba($link-color, .7);
-  }
-
-  &.active span {
-    background-color: $link-color;
+  &.active {
+    > span {
+      color: $white-color;
+      background-color: $link-color;
+    }
   }
 
 
