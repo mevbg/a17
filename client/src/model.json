@@ -41,7 +41,7 @@
   "devices": [
     {
       "name": "boiler",
-      "title": "Boiler"
+      "title": "Water heater"
     },
     {
       "name": "hobs",
@@ -190,7 +190,7 @@
       "features": ["fat", "black"],
       "role": {
         "name": "boiler",
-        "title": "Boiler"
+        "title": "Water heater"
       },
       "rooms": [
         "closet"
