@@ -23,23 +23,28 @@ class App extends React.Component {
     switchers
   };
 
-  updateCategory = (cat, type, selection) => this.state[cat].map((item) => {
-    item.active = type === cat && item.name === selection;
+  updateCategory = (cat, group, target, active) => this.state[cat].map((item) => {
+    item.active = group === cat && item.name === target && !item.active;
 
     return item;
   });
 
-  updateSwitchers = (type, selection) => this.state.switchers.map((switcher) => {
-    switcher.glow = switcher[type] && switcher[type].indexOf(selection) !== -1;
+  updateSwitchers = (group, target, active) => this.state.switchers.map((switcher) => {
+    if (switcher[group] && switcher[group].indexOf(target) !== -1 && active) {
+      switcher.glow = true;
+    }
+    else {
+      delete switcher.glow;
+    }
 
     return switcher;
   });
 
-  handleSelection = (type, selection) => {
+  handleSelection = (group, target, active) => {
     this.setState(() => ({
-      devices: this.updateCategory('devices', type, selection),
-      rooms: this.updateCategory('rooms', type, selection),
-      switchers: this.updateSwitchers(type, selection)
+      devices: this.updateCategory('devices', group, target, active),
+      rooms: this.updateCategory('rooms', group, target, active),
+      switchers: this.updateSwitchers(group, target, active)
     }));
   };
 

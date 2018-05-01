@@ -19,11 +19,11 @@ const Button = (props) => {
 
   return (
     <a className={classes} onClick={() => {
-      props.handleClick(props.category, props.name);
+      props.handleClick(props.category, props.name, !props.active);
     }}>
-      <span>
-        {props.title}
-      </span>
+    <span>
+      {props.title}
+    </span>
     </a>
   );
 };
