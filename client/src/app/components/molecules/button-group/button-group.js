@@ -16,7 +16,7 @@ const ButtonGroup = props => (
     { props.items.map((item, index) => (
       <li className='item' key={item.name}>
         <Button
-          category={props.category}
+          group={props.group}
           handleClick={props.handleSelection}
           {...item}
         />

@@ -23,31 +23,41 @@ class App extends React.Component {
     switchers
   };
 
-  selectButton = (cat, group, target) => this.state[cat].map((button) => {
+  selectButton = (group, target) => this.state[group].map((button) => {
     delete button.marked;
-    button.selected = group === cat && button.name === target && !button.selected;
+    button.selected =
+      target.group === group &&
+      button.name === target.name &&
+      !button.selected;
 
     return button;
   });
 
-  markSwitchers = (group, target) => this.state.switchers.map((switcher) => {
+  markSwitchers = button => this.state.switchers.map((switcher) => {
     delete switcher.selected;
-    switcher.marked = switcher[group] && switcher[group].indexOf(target) !== -1 && !target.selected;
+    switcher.marked =
+      switcher[button.group] &&
+      switcher[button.group].indexOf(button.name) !== -1 &&
+      !button.selected;
 
     return switcher;
   });
 
   selectSwitcher = target => this.state.switchers.map((switcher) => {
     delete switcher.marked;
-    switcher.selected = switcher.id === target.id && !switcher.selected;
+    switcher.selected =
+      switcher.id === target.id &&
+      !switcher.selected;
 
     return switcher;
   });
 
-  markButtons = (group, target) => this.state[group].map((button) => {
+  markButtons = (group, switcher) => this.state[group].map((button) => {
     delete button.selected;
     button.marked =
-      target[group] && target[group].indexOf(button.name) !== -1 && !target.selected;
+      switcher[group] &&
+      switcher[group].indexOf(button.name) !== -1 &&
+      !switcher.selected;
 
     return button;
   });
@@ -60,11 +70,11 @@ class App extends React.Component {
     }));
   };
 
-  handleButtonClick = (group, target, active) => {
+  handleButtonClick = (button) => {
     this.setState(() => ({
-      devices: this.selectButton('devices', group, target),
-      rooms: this.selectButton('rooms', group, target),
-      switchers: this.markSwitchers(group, target)
+      devices: this.selectButton('devices', button),
+      rooms: this.selectButton('rooms', button),
+      switchers: this.markSwitchers(button)
     }));
   };
 

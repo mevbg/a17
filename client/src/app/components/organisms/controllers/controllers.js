@@ -24,7 +24,7 @@ const Controllers = props => (
           <Label text='Device' />
           <ButtonGroup
             items={props.devices}
-            category={'devices'}
+            group={'devices'}
             handleSelection={props.handleSelection}
           />
         </div>
@@ -39,7 +39,7 @@ const Controllers = props => (
           <Label text='Room' />
           <ButtonGroup
             items={props.rooms}
-            category={'rooms'}
+            group={'rooms'}
             handleSelection={props.handleSelection}
           />
         </div>

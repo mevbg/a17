@@ -20,7 +20,7 @@ const Button = (props) => {
 
   return (
     <a className={classes} onClick={() => {
-      props.handleClick(props.category, props.name);
+      props.handleClick(props);
     }}>
     <span>
       {props.title}
