@@ -12,7 +12,7 @@
   $hover-color: rgba($link-color, .7);
   $marked-color: map-get($reg-colors, 'yellow');
   $selected-color: $link-color;
-  $shadow: .05em .05em .05em map-get($reg-colors, 'graphite');
+  $shadow: 1px 1px 1px map-get($reg-colors, 'graphite');
 
 
   //--------------------------| Base
