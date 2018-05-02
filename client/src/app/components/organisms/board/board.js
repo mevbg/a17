@@ -23,6 +23,7 @@ const Board = (props) => {
             key={index}
             level={level}
             switchers={_.filter(props.switchers, switcher => switcher.level === level)}
+            handleSelection={props.handleSelection}
           />
         ))
       }

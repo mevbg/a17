@@ -23,28 +23,48 @@ class App extends React.Component {
     switchers
   };
 
-  updateCategory = (cat, group, target, active) => this.state[cat].map((item) => {
-    item.active = group === cat && item.name === target && !item.active;
+  selectButton = (cat, group, target) => this.state[cat].map((button) => {
+    delete button.marked;
+    button.selected = group === cat && button.name === target && !button.selected;
 
-    return item;
+    return button;
   });
 
-  updateSwitchers = (group, target, active) => this.state.switchers.map((switcher) => {
-    if (switcher[group] && switcher[group].indexOf(target) !== -1 && active) {
-      switcher.glow = true;
-    }
-    else {
-      delete switcher.glow;
-    }
+  markSwitchers = (group, target) => this.state.switchers.map((switcher) => {
+    delete switcher.selected;
+    switcher.marked = switcher[group] && switcher[group].indexOf(target) !== -1 && !target.selected;
 
     return switcher;
   });
 
-  handleSelection = (group, target, active) => {
+  selectSwitcher = target => this.state.switchers.map((switcher) => {
+    delete switcher.marked;
+    switcher.selected = switcher.id === target.id && !switcher.selected;
+
+    return switcher;
+  });
+
+  markButtons = (group, target) => this.state[group].map((button) => {
+    delete button.selected;
+    button.marked =
+      target[group] && target[group].indexOf(button.name) !== -1 && !target.selected;
+
+    return button;
+  });
+
+  handleSwitchClick = (switcher) => {
     this.setState(() => ({
-      devices: this.updateCategory('devices', group, target, active),
-      rooms: this.updateCategory('rooms', group, target, active),
-      switchers: this.updateSwitchers(group, target, active)
+      devices: this.markButtons('devices', switcher),
+      rooms: this.markButtons('rooms', switcher),
+      switchers: this.selectSwitcher(switcher)
+    }));
+  };
+
+  handleButtonClick = (group, target, active) => {
+    this.setState(() => ({
+      devices: this.selectButton('devices', group, target),
+      rooms: this.selectButton('rooms', group, target),
+      switchers: this.markSwitchers(group, target)
     }));
   };
 
@@ -53,10 +73,14 @@ class App extends React.Component {
       <div id="app">
         <HomePage>
           <Header key='header' />
-          <Board key='main' switchers={this.state.switchers} />
+          <Board
+            key='main'
+            switchers={this.state.switchers}
+            handleSelection={this.handleSwitchClick}
+          />
           <Controllers
             key='section'
-            handleSelection={this.handleSelection}
+            handleSelection={this.handleButtonClick}
             devices={this.state.devices}
             rooms={this.state.rooms}
           />

@@ -13,8 +13,10 @@
 
   $wing-width: get-em-unit($roles-size-switch-width);
   $lever-height: .6em;
-  $focus-color: map-get($reg-colors, 'graphite');
-  $shadow: 0 0 .4em $focus-color;
+  $hover-color: map-get($reg-colors, 'orange-light');
+  $marked-color: map-get($reg-colors, 'graphite');
+  $selected-color: map-get($reg-colors, 'graphite');
+  $shadow: 0 0 .4em map-get($reg-colors, 'graphite');
   $transition: all map-get($roles-transitions, 'glow') ease-in-out;
 
 
@@ -26,8 +28,12 @@
   position: relative;
   display: block;
   height: get-em-unit($roles-size-switch-height);
-  //cursor: pointer;
   border: 1px solid map-get($reg-colors, 'silver');
+
+  &,
+  * {
+    cursor: pointer;
+  }
 
 
   //--------------------------| Wings
@@ -132,16 +138,10 @@
 
   //--------------------------| States
 
-  &:hover {
-    &::before {
-      @include opacity(.5);
-    }
-  }
-
-  &.glow {
+  &.marked {
     @include box-shadow($shadow);
 
-    border-color: $focus-color;
+    border-color: $marked-color;
 
     &::before {
       @include opacity(.5);
@@ -149,6 +149,26 @@
 
     .lever {
       @include translateY(-#{$lever-height * 1.2});
+    }
+  }
+
+  &.selected {
+    border-color: $selected-color;
+
+    &::before {
+      @include opacity(.5);
+    }
+
+    .lever {
+      @include translateY(-#{$lever-height * 1.2});
+    }
+  }
+
+  &:hover {
+    border-color: $hover-color;
+
+    &::before {
+      @include opacity(.5);
     }
   }
 

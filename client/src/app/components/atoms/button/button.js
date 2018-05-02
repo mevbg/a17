@@ -14,12 +14,13 @@ import './button.scss';
 
 const Button = (props) => {
   const classes = classNames('pa-button', {
-    active: props.active
+    marked: props.marked,
+    selected: props.selected
   });
 
   return (
     <a className={classes} onClick={() => {
-      props.handleClick(props.category, props.name, !props.active);
+      props.handleClick(props.category, props.name);
     }}>
     <span>
       {props.title}

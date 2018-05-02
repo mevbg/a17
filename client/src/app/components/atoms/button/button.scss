@@ -9,6 +9,10 @@
   $btn-font-size: map-get($roles-typo-font-sizes, 'button');
   $link-color: map-get($roles-col-links, 'link');
   $white-color: map-get($reg-backgrounds, 'white');
+  $hover-color: rgba($link-color, .7);
+  $marked-color: map-get($reg-colors, 'yellow');
+  $selected-color: $link-color;
+  $shadow: .05em .05em .05em map-get($reg-colors, 'graphite');
 
 
   //--------------------------| Base
@@ -34,19 +38,28 @@
 
   //--------------------------| States
 
+  &.marked {
+    > span {
+      @include box-shadow($shadow);
+
+      color: map-get($roles-col-texts, 'system');
+      background-color: $marked-color;
+    }
+  }
+
+  &.selected {
+    > span {
+      color: $white-color;
+      background-color: $selected-color;
+    }
+  }
+
   @media (hover: hover) {
     &:hover {
       > span {
         color: $white-color;
-        background-color: rgba($link-color, .7);
+        background-color: $hover-color;
       }
-    }
-  }
-
-  &.active {
-    > span {
-      color: $white-color;
-      background-color: $link-color;
     }
   }
 
