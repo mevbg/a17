@@ -1,7 +1,7 @@
 {
   "name": "switchboard-A17",
   "title": "Switchboard A17",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Home electrical distribution board",
   "main": "index.js",
   "scripts": {
