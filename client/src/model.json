@@ -134,7 +134,7 @@
       "label": "C16",
       "role": {
         "name": "unknown",
-        "title": "Unknown function"
+        "title": "Unknown functionality"
       }
     },
     {
@@ -161,7 +161,7 @@
       "label": "C6",
       "role": {
         "name": "unknown",
-        "title": "Unknown function"
+        "title": "Unknown functionality"
       }
     },
 
@@ -207,7 +207,7 @@
       "features": ["fat", "black"],
       "role": {
         "name": "unknown",
-        "title": "Unknown function"
+        "title": "Unknown functionality"
       }
     },
     {
