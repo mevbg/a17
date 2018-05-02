@@ -8,6 +8,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css/normalize.css';
 import './styles/scaffolding.scss';
+import './images/logo.png';
+import './images/app.png';
 
 import App from './app';
 

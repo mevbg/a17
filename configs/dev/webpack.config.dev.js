@@ -75,12 +75,24 @@ const config = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader']
-      }]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './client/src/markup.html',
       title: pkg.title,
+      cover: `${pkg.homepage}/images/logo.png`,
+      homepage: pkg.homepage,
+      description: pkg.description,
     }),
     new StyleLintPlugin({
       files: ['./client/src/**/*.scss'],
@@ -89,7 +101,7 @@ const config = {
     }),
     new FaviconsWebpackPlugin({
       // Your source logo
-      logo: './client/src/favicon.png',
+      logo: './client/src/images/logo.png',
       // The prefix for all image files (might be a folder or a name)
       prefix: 'icons-[hash]/',
       // Emit all stats of the generated icons

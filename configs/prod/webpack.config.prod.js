@@ -70,7 +70,19 @@ const config = {
         loader: 'babel-loader',
         test: /\.js$/,
         exclude: /node_modules/
-      }]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name].[ext]'
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(['**/*.*'], {
@@ -80,6 +92,9 @@ const config = {
     }),
     new HtmlWebpackPlugin({
       title: pkg.title,
+      cover: `${pkg.homepage}/images/logo.png`,
+      homepage: pkg.homepage,
+      description: pkg.description,
       template: './client/src/markup.html',
       minify: {
         minifyCSS: true,
@@ -111,7 +126,7 @@ const config = {
     }),
     new FaviconsWebpackPlugin({
       // Your source logo
-      logo: './client/src/favicon.png',
+      logo: './client/src/images/logo.png',
       // The prefix for all image files (might be a folder or a name)
       prefix: 'icons-[hash]/',
       // Emit all stats of the generated icons
