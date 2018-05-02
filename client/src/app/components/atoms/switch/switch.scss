@@ -164,11 +164,13 @@
     }
   }
 
-  &:hover {
-    border-color: $hover-color;
+  @media (hover: hover) {
+    &:hover {
+      border-color: $hover-color;
 
-    &::before {
-      @include opacity(.5);
+      &::before {
+        @include opacity(.5);
+      }
     }
   }
 
