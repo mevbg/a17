@@ -17,7 +17,7 @@ import './app.scss';
 //--------------------------| Body
 
 class App extends React.Component {
-  state = {
+  state = JSON.parse(localStorage.getItem('state')) || {
     devices,
     rooms,
     switchers
@@ -62,12 +62,16 @@ class App extends React.Component {
     return button;
   });
 
+  saveStateToLocalStorage = () => {
+    localStorage.setItem('state', JSON.stringify(this.state));
+  };
+
   handleSwitchClick = (switcher) => {
     this.setState(() => ({
       devices: this.markButtons('devices', switcher),
       rooms: this.markButtons('rooms', switcher),
       switchers: this.selectSwitcher(switcher)
-    }));
+    }), this.saveStateToLocalStorage);
   };
 
   handleButtonClick = (button) => {
@@ -75,7 +79,7 @@ class App extends React.Component {
       devices: this.selectButton('devices', button),
       rooms: this.selectButton('rooms', button),
       switchers: this.markSwitchers(button)
-    }));
+    }), this.saveStateToLocalStorage);
   };
 
   render() {
