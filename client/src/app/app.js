@@ -23,7 +23,9 @@ class App extends React.Component {
     switchers
   };
 
-  selectButton = (group, target) => this.state[group].map((button) => {
+  selectButton = (group, target) => this.state[group].map((originButton) => {
+    const button = originButton;
+
     delete button.marked;
     button.selected =
       target.group === group &&
@@ -33,7 +35,9 @@ class App extends React.Component {
     return button;
   });
 
-  markSwitchers = button => this.state.switchers.map((switcher) => {
+  markSwitchers = button => this.state.switchers.map((originSwitcher) => {
+    const switcher = originSwitcher;
+
     delete switcher.selected;
     switcher.marked =
       switcher[button.group] &&
@@ -43,7 +47,9 @@ class App extends React.Component {
     return switcher;
   });
 
-  selectSwitcher = target => this.state.switchers.map((switcher) => {
+  selectSwitcher = target => this.state.switchers.map((originSwitcher) => {
+    const switcher = originSwitcher;
+
     delete switcher.marked;
     switcher.selected =
       switcher.id === target.id &&
@@ -52,7 +58,9 @@ class App extends React.Component {
     return switcher;
   });
 
-  markButtons = (group, switcher) => this.state[group].map((button) => {
+  markButtons = (group, switcher) => this.state[group].map((originButton) => {
+    const button = originButton;
+
     delete button.selected;
     button.marked =
       switcher[group] &&
