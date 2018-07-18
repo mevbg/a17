@@ -5,6 +5,7 @@
 //--------------------------| Import
 
 import React from 'react';
+import { connect } from 'react-redux';
 import ButtonGroup from '../../molecules/button-group';
 import Label from '../../atoms/label';
 import Meta from '../../atoms/meta';
@@ -23,7 +24,6 @@ const Controllers = props => (
           <ButtonGroup
             items={props.devices}
             group={'devices'}
-            handleSelection={props.handleSelection}
           />
         </div>
       </div>
@@ -38,7 +38,6 @@ const Controllers = props => (
           <ButtonGroup
             items={props.rooms}
             group={'rooms'}
-            handleSelection={props.handleSelection}
           />
         </div>
       </div>
@@ -47,6 +46,14 @@ const Controllers = props => (
 );
 
 
+//--------------------------| State to Props
+
+const mapStateToProps = state => ({
+  devices: state.devices,
+  rooms: state.rooms
+});
+
+
 //--------------------------| Export
 
-export default Controllers;
+export default connect(mapStateToProps)(Controllers);

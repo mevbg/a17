@@ -6,11 +6,14 @@
 
 import React from 'react';
 import classNames from 'classnames';
+import { connect } from 'react-redux';
 import './button.scss';
+import { markSwitcher } from '../../../actions/switchers';
+import { selectDevice } from '../../../actions/devices';
+import { selectRoom } from '../../../actions/rooms';
 
 
 //--------------------------| Body
-
 
 const Button = (props) => {
   const classes = classNames('pa-button', {
@@ -20,7 +23,9 @@ const Button = (props) => {
 
   return (
     <a className={classes} onClick={() => {
-      props.handleClick(props);
+      props.dispatch(selectDevice(props));
+      props.dispatch(selectRoom(props));
+      props.dispatch(markSwitcher(props));
     }}>
     <span>
       {props.title}
@@ -32,4 +37,10 @@ const Button = (props) => {
 
 //--------------------------| Export
 
-export default Button;
+const mapDispatchToProps = dispatch => ({
+  selectDevice: props => dispatch(selectDevice(props)),
+  selectRoom: props => dispatch(selectRoom(props)),
+  markSwitcher: props => dispatch(markSwitcher(props))
+});
+
+export default connect(mapDispatchToProps)(Button);

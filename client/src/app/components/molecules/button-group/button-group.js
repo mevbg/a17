@@ -17,7 +17,6 @@ const ButtonGroup = props => (
       <li className='item' key={item.name}>
         <Button
           group={props.group}
-          handleClick={props.handleSelection}
           {...item}
         />
       </li>
