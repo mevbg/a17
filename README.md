@@ -10,7 +10,7 @@ A personal app for helping me use the home electrical distribution board.
 
 *Technologies:* **ES6**, **HTML5**, **CSS3**
 
-*Libraries:* **[React](https://reactjs.org)**, **[Lodash](https://lodash.com)**, **[Compass](http://compass-style.org)**
+*Libraries:* **[React](https://reactjs.org)**, **[Redux](https://redux.js.org)**, **[Lodash](https://lodash.com)**, **[Compass](http://compass-style.org)**
 
 *Preprocessors:* **[Sass](http://sass-lang.com)**, **[Babel](http://babeljs.io)**
 

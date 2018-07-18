@@ -6,6 +6,7 @@
 
 import React from 'react';
 import _ from 'lodash';
+import { connect } from 'react-redux';
 import BoardLevel from '../../molecules/board-level';
 import './board.scss';
 
@@ -23,7 +24,6 @@ const Board = (props) => {
             key={index}
             level={level}
             switchers={_.filter(props.switchers, switcher => switcher.level === level)}
-            handleSelection={props.handleSelection}
           />
         ))
       }
@@ -32,6 +32,13 @@ const Board = (props) => {
 };
 
 
+//--------------------------| State to Props
+
+const mapStateToProps = state => ({
+  switchers: state.switchers
+});
+
+
 //--------------------------| Export
 
-export default Board;
+export default connect(mapStateToProps)(Board);

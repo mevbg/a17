@@ -5,7 +5,7 @@
 //--------------------------| Import
 
 import React from 'react';
-import Switch from '../../atoms/switch';
+import Switcher from '../../atoms/switcher';
 import './board-level.scss';
 
 
@@ -16,8 +16,7 @@ const BoardLevel = props => (
     {
       props.switchers.map((switcher, index) => (
         <div key={index} className="pm-board-level--item">
-          <Switch
-            handleClick={props.handleSelection}
+          <Switcher
             {...switcher}
           />
         </div>

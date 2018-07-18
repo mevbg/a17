@@ -1,8 +1,8 @@
-// =========================| Switch |========================= //
+// =========================| Switcher |========================= //
 
 
 
-.pa-switch {
+.pa-switcher {
 
   //--------------------------| Data
 
@@ -11,7 +11,7 @@
 
   //--------------------------| Variables
 
-  $wing-width: get-em-unit($roles-size-switch-width);
+  $wing-width: get-em-unit($roles-size-switcher-width);
   $lever-height: .6em;
   $hover-color: map-get($reg-colors, 'orange-light');
   $marked-color: map-get($reg-colors, 'graphite');
@@ -27,7 +27,7 @@
 
   position: relative;
   display: block;
-  height: get-em-unit($roles-size-switch-height);
+  height: get-em-unit($roles-size-switcher-height);
   border: 1px solid map-get($reg-colors, 'silver');
 
   &,
@@ -42,7 +42,7 @@
     $gap: if($wing == 1, 0, $wing / 2);
 
     &[data-wings='#{$wing}'] {
-      width: get-em-unit(($roles-size-switch-width + $gap) * $wing);
+      width: get-em-unit(($roles-size-switcher-width + $gap) * $wing);
     }
   }
 
@@ -175,4 +175,4 @@
   }
 
 
-} // .pa-switch
+} // .pa-switcher

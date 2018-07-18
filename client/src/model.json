@@ -83,17 +83,17 @@
 
   "switchers": [
     {
-      "id": "level1_switch1",
+      "id": "level1_switcher1",
       "wings": 3,
       "level": 1,
       "label": "C32",
       "role": {
         "name": "main",
-        "title": "General switch"
+        "title": "General switcher"
       }
     },
     {
-      "id": "level1_switch2",
+      "id": "level1_switcher2",
       "wings": 1,
       "level": 1,
       "label": "C10",
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "id": "level1_switch3",
+      "id": "level1_switcher3",
       "wings": 1,
       "level": 1,
       "label": "C10",
@@ -128,7 +128,7 @@
       ]
     },
     {
-      "id": "level1_switch4",
+      "id": "level1_switcher4",
       "wings": 1,
       "level": 1,
       "label": "C16",
@@ -138,7 +138,7 @@
       }
     },
     {
-      "id": "level1_switch5",
+      "id": "level1_switcher5",
       "wings": 1,
       "level": 1,
       "label": "C16",
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "id": "level1_switch6",
+      "id": "level1_switcher6",
       "wings": 1,
       "level": 1,
       "label": "C6",
@@ -166,7 +166,7 @@
     },
 
     {
-      "id": "level2_switch1",
+      "id": "level2_switcher1",
       "wings": 2,
       "level": 2,
       "label": "C16",
@@ -183,7 +183,7 @@
       ]
     },
     {
-      "id": "level2_switch2",
+      "id": "level2_switcher2",
       "wings": 2,
       "level": 2,
       "label": "C16",
@@ -200,7 +200,7 @@
       ]
     },
     {
-      "id": "level2_switch3",
+      "id": "level2_switcher3",
       "wings": 2,
       "level": 2,
       "label": "C25",
@@ -211,7 +211,7 @@
       }
     },
     {
-      "id": "level2_switch4",
+      "id": "level2_switcher4",
       "wings": 2,
       "level": 2,
       "label": "25A",
@@ -222,7 +222,7 @@
       }
     },
     {
-      "id": "level2_switch5",
+      "id": "level2_switcher5",
       "wings": 1,
       "level": 2,
       "label": "C16",
@@ -241,7 +241,7 @@
       ]
     },
     {
-      "id": "level2_switch6",
+      "id": "level2_switcher6",
       "wings": 1,
       "level": 2,
       "label": "C16",
@@ -260,7 +260,7 @@
       ]
     },
     {
-      "id": "level2_switch7",
+      "id": "level2_switcher7",
       "wings": 1,
       "level": 2,
       "label": "C16",
@@ -276,7 +276,7 @@
       ]
     },
     {
-      "id": "level2_switch8",
+      "id": "level2_switcher8",
       "wings": 1,
       "level": 2,
       "label": "C16",
