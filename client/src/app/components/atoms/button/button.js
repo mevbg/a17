@@ -37,10 +37,4 @@ const Button = (props) => {
 
 //--------------------------| Export
 
-const mapDispatchToProps = dispatch => ({
-  selectDevice: props => dispatch(selectDevice(props)),
-  selectRoom: props => dispatch(selectRoom(props)),
-  markSwitcher: props => dispatch(markSwitcher(props))
-});
-
-export default connect(mapDispatchToProps)(Button);
+export default connect()(Button);

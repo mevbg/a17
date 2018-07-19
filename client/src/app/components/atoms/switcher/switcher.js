@@ -45,10 +45,4 @@ const Switcher = (props) => {
 
 //--------------------------| Export
 
-const mapDispatchToProps = dispatch => ({
-  selectSwitcher: props => dispatch(selectSwitcher(props)),
-  markDevice: props => dispatch(markDevice(props)),
-  markRoom: props => dispatch(markRoom(props))
-});
-
-export default connect(mapDispatchToProps)(Switcher);
+export default connect()(Switcher);
