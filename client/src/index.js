@@ -36,7 +36,6 @@ stateStore.subscribe(() => {
 
 //--------------------------| Render
 
-
 const jsx = (
   <Provider store={ stateStore }>
     <App />
