@@ -10,9 +10,12 @@ import switchersReducer from '../reducers/switchers';
 
 
 
-// Export
-export default () => createStore(combineReducers({
-  devices: devicesReducer,
-  rooms: roomsReducer,
-  switchers: switchersReducer
-}));
+export default () => createStore(
+  combineReducers({
+    devices: devicesReducer,
+    rooms: roomsReducer,
+    switchers: switchersReducer
+  }),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && // eslint-disable-line no-underscore-dangle
+  window.__REDUX_DEVTOOLS_EXTENSION__() // eslint-disable-line no-underscore-dangle
+);
