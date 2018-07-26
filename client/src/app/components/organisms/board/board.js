@@ -1,17 +1,22 @@
-// =========================| Board |========================= //
-
+//====================================================|
+// BOARD
 
 
 //--------------------------| Import
 
+// Libraries
 import React from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import BoardLevel from '../../molecules/board-level';
+
+// Styles
 import './board.scss';
 
+// Molecules
+import BoardLevel from '../../molecules/board-level';
 
-//--------------------------| Body
+
+//--------------------------| Component
 
 const Board = (props) => {
   const levels = props.switchers.map(e => e.level).filter((e, i, a) => i === a.indexOf(e));

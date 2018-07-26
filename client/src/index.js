@@ -1,22 +1,30 @@
-// =========================| Switchboard A17 |========================= //
-
+//====================================================|
+// SWITCHBOARD A17
 
 
 //--------------------------| Import
 
+// Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import 'normalize.css/normalize.css';
-import configureStore from './app/store/configureStore';
-import './styles/scaffolding.scss';
-import './images/logo.png';
-import './images/app.png';
 
+// Styles
+import 'normalize.css/normalize.css';
+import './styles/scaffolding.scss';
+
+// Store
+import configureStore from './app/store/configureStore';
+
+// Images
+import './assets/images/logo.png';
+import './assets/images/app.png';
+
+// App
 import App from './app';
 
 
-//--------------------------| Body
+//--------------------------| Root
 
 const root = document.createElement('div');
 

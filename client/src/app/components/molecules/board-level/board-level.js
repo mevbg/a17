@@ -1,15 +1,20 @@
-// =========================| Board level |========================= //
-
+//====================================================|
+// BOARD LEVEL
 
 
 //--------------------------| Import
 
+// Libraries
 import React from 'react';
-import Switcher from '../../atoms/switcher';
+
+// Styles
 import './board-level.scss';
 
+// Atoms
+import Switcher from '../../atoms/switcher';
 
-//--------------------------| Body
+
+//--------------------------| Component
 
 const BoardLevel = props => (
   <div className='pm-board-level'>

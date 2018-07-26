@@ -1,10 +1,10 @@
-// =========================| Reducers: Switchers |========================= //
-
+//====================================================|
+// REDUCERS: SWITCHERS
 
 
 //--------------------------| Import
 
-import { switchers } from '../../model.json';
+import { switchers } from '../../database/content.json';
 
 
 //--------------------------| Default state

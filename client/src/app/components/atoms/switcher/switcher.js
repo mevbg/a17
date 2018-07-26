@@ -1,20 +1,27 @@
-// =========================| Switcher |========================= //
-
+//====================================================|
+// SWITCHER
 
 
 //--------------------------| Import
 
+// Libraries
 import React from 'react';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
-import Meta from '../meta';
+
+// Styles
 import './switcher.scss';
+
+// Actions
 import { selectSwitcher } from '../../../actions/switchers';
 import { markRoom } from '../../../actions/rooms';
 import { markDevice } from '../../../actions/devices';
 
+// Atoms
+import Meta from '../meta';
 
-//--------------------------| Body
+
+//--------------------------| Component
 
 const Switcher = (props) => {
   const classes = classNames('pa-switcher', {

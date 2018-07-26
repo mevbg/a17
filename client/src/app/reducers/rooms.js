@@ -1,10 +1,10 @@
-// =========================| Reducers: Rooms |========================= //
-
+//====================================================|
+// REDUCERS: ROOMS
 
 
 //--------------------------| Import
 
-import { rooms } from '../../model.json';
+import { rooms } from '../../database/content.json';
 
 
 //--------------------------| Default state

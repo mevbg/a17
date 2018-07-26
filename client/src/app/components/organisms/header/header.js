@@ -1,15 +1,20 @@
-// =========================| Header |========================= //
-
+//====================================================|
+// HEADER
 
 
 //--------------------------| Import
 
+// Libraries
 import React from 'react';
-import pkg from '../../../../../../package.json';
+
+// Styles
 import './header.scss';
 
+// Data
+import pkg from '../../../../../../package.json';
 
-//--------------------------| Body
+
+//--------------------------| Component
 
 const title = pkg.title.split(' ');
 

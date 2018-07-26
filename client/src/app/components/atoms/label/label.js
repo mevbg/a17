@@ -1,14 +1,17 @@
-// =========================| Label |========================= //
-
+//====================================================|
+// LABEL
 
 
 //--------------------------| Import
 
+// Libraries
 import React from 'react';
+
+// Styles
 import './label.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Label = props => (
   <label className="pa-label">

@@ -1,15 +1,20 @@
-// =========================| Home page |========================= //
-
+//====================================================|
+// HOME PAGE
 
 
 //--------------------------| Import
 
+// Libraries
 import React from 'react';
-import getComponent from '../../../helpers/get-component';
+
+// Styles
 import './homepage.scss';
 
+// Helpers
+import getComponent from '../../../helpers/get-component';
 
-//--------------------------| Body
+
+//--------------------------| Component
 
 const HomePage = props => (
   <div className="pt-homepage">

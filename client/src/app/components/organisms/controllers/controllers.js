@@ -1,19 +1,26 @@
-// =========================| Controllers |========================= //
-
+//====================================================|
+// CONTROLLERS
 
 
 //--------------------------| Import
 
+// Libraries
 import React from 'react';
 import { connect } from 'react-redux';
-import ButtonGroup from '../../molecules/button-group';
+
+// Styles
+import './controllers.scss';
+import '../../../../styles/tokens/tokens_flexbox.scss';
+
+// Atoms
 import Label from '../../atoms/label';
 import Meta from '../../atoms/meta';
-import '../../../../styles/tokens/tokens_flexbox.scss';
-import './controllers.scss';
+
+// Molecules
+import ButtonGroup from '../../molecules/button-group';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Controllers = props => (
   <div className="po-controllers">

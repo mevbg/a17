@@ -1,10 +1,10 @@
-// =========================| Reducers: Devices |========================= //
-
+//====================================================|
+// REDUCERS: DEVICES
 
 
 //--------------------------| Import
 
-import { devices } from '../../model.json';
+import { devices } from '../../database/content.json';
 
 
 //--------------------------| Default state

@@ -1,19 +1,28 @@
-// =========================| App |========================= //
-
+//====================================================|
+// APP
 
 
 //--------------------------| Import
 
-import React from 'react';
+// Dev
 import { hot } from 'react-hot-loader';
+
+// Libraries
+import React from 'react';
+
+// Styles
+import './app.scss';
+
+// Organisms
 import Header from './components/organisms/header';
 import Board from './components/organisms/board';
 import Controllers from './components/organisms/controllers';
+
+// Templates
 import HomePage from './components/templates/homepage';
-import './app.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const App = () => (
   <div id="app">

@@ -1,14 +1,17 @@
-// =========================| Meta |========================= //
-
+//====================================================|
+// META
 
 
 //--------------------------| Import
 
+// Libraries
 import React from 'react';
+
+// Styles
 import './meta.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Meta = props => (
   <label className="pa-meta">

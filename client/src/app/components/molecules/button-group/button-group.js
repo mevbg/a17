@@ -1,15 +1,20 @@
-// =========================| Button group |========================= //
-
+//====================================================|
+// BUTTON GROUP
 
 
 //--------------------------| Import
 
+// Libraries
 import React from 'react';
-import Button from '../../atoms/button';
+
+// Styles
 import './button-group.scss';
 
+// Atoms
+import Button from '../../atoms/button';
 
-//--------------------------| Body
+
+//--------------------------| Component
 
 const ButtonGroup = props => (
   <ul className="pm-button-group">

@@ -1,19 +1,24 @@
-// =========================| Button |========================= //
-
+//====================================================|
+// BUTTON
 
 
 //--------------------------| Import
 
+// Libraries
 import React from 'react';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
+
+// Styles
 import './button.scss';
+
+// Actions
 import { markSwitcher } from '../../../actions/switchers';
 import { selectDevice } from '../../../actions/devices';
 import { selectRoom } from '../../../actions/rooms';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Button = (props) => {
   const classes = classNames('pa-button', {
