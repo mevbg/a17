@@ -19,23 +19,34 @@
 }
 
 
+//--------------------------| Document
 
-//--------------------------| HTML
+html {
+  position: relative;
+}
+
+body {
+  position: fixed;
+  width: 100%;
+}
+
+html,
+body {
+  min-height: 100vh;
+  overflow: hidden;
+}
 
 html {
   $min-font-size: map-get($roles-typo-font-sizes-base, 'min');
-  $max-font-size: map-get($roles-typo-font-sizes-base, 'max');
 
-  @include scaler(font-size, $min-font-size, $max-font-size);
+  @include scaler(font-size, $min-font-size);
 }
 
-
-//--------------------------| Body
-
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include display-flex();
+  @include flex-direction(column);
+  @include justify-content(center);
+
   min-height: 100vh;
   background-color: map-get($reg-backgrounds, 'black');
   -webkit-tap-highlight-color: rgba(map-get($reg-colors, 'black'), 0);

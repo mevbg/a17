@@ -10,8 +10,9 @@
   @include box-shadow(0 0 80em -2em map-get($reg-colors, 'dark-silver'));
   @include user-select(none);
 
-  min-width: map-get($reg-screens, 'min');
-  max-width: map-get($reg-screens, 'max');
+  min-width: map-get($reg-screens, 'min-w');
+  max-width: map-get($reg-screens, 'max-w');
+  height: 100vh;
   margin: 0 auto;
   font: map-get($roles-typo-font-weights, 'text') 1em map-get($roles-typo-font-families, 'text');
   text-align: center;

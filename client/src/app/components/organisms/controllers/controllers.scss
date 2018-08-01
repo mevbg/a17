@@ -18,22 +18,25 @@
   //--------------------------| Flexbox
 
   > .flex {
-    margin-top: $offset;
+    @include justify-content(center);
   }
 
 
   //--------------------------| Columns
 
   .column:not(:nth-child(2)) {
-    flex: 1;
+    @include flex(1);
   }
 
   .column:nth-child(2) {
-    align-self: center;
+    @include align-self(center);
+
     padding: 0 1em;
   }
 
   .column {
+    max-width: 13.4em;
+
     > div + div {
       margin-top: $offset;
     }

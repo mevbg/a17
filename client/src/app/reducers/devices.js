@@ -9,7 +9,7 @@ import { devices } from '../../database/content.json';
 
 //--------------------------| Default state
 
-const localState = JSON.parse(localStorage.getItem('state'));
+const localState = JSON.parse(localStorage.getItem('switchboard-a17'));
 const devicesReducerDefaultState = localState ? localState.devices : devices;
 
 

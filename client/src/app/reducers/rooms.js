@@ -9,7 +9,7 @@ import { rooms } from '../../database/content.json';
 
 //--------------------------| Default state
 
-const localState = JSON.parse(localStorage.getItem('state'));
+const localState = JSON.parse(localStorage.getItem('switchboard-a17'));
 const roomsReducerDefaultState = localState ? localState.rooms : rooms;
 
 

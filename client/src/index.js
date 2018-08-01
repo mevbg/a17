@@ -38,7 +38,7 @@ document.body.appendChild(root);
 const stateStore = configureStore();
 
 stateStore.subscribe(() => {
-  localStorage.setItem('state', JSON.stringify(stateStore.getState()));
+  localStorage.setItem('switchboard-a17', JSON.stringify(stateStore.getState()));
 });
 
 

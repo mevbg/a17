@@ -9,7 +9,7 @@ import { switchers } from '../../database/content.json';
 
 //--------------------------| Default state
 
-const localState = JSON.parse(localStorage.getItem('state'));
+const localState = JSON.parse(localStorage.getItem('switchboard-a17'));
 const switchersReducerDefaultState = localState ? localState.switchers : switchers;
 
 

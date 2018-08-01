@@ -6,9 +6,10 @@
 
   //--------------------------| Base
 
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  @include display-flex();
+  @include flex-direction(column);
+
+  height: 100vh;
 
 
 } // .pt-homepage
@@ -17,20 +18,20 @@
 //--------------------------| Main
 
 .pt-homepage--main {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+  @include display-flex();
+  @include flex(1);
+  @include flex-direction(column);
 }
 
 
 //--------------------------| Section
 
 .pt-homepage--section:last-child {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+  @include display-flex();
+  @include flex-direction(column);
+  @include flex(1);
 
   > * {
-    flex: 1;
+    @include flex(1);
   }
 }

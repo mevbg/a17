@@ -5,8 +5,8 @@
 //--------------------------| Body
 
 .pm-board-level {
-  display: flex;
-  justify-content: center;
+  @include display-flex();
+  @include justify-content(center);
 
   & + .pm-board-level {
     margin-top: 1em;
