@@ -6,6 +6,8 @@
 
   //--------------------------| Base
 
+  @include border-v(1px solid map-get($reg-colors, 'silver'));
+
   padding: get-em-unit(map-get($roles-offsets, 'board'));
   background-color: map-get($reg-backgrounds, 'white');
 
