@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Styles
-import './homepage.scss';
+import styles from './homepage.scss';
 
 // Helpers
 import getComponent from '../../../helpers/get-component';
@@ -17,17 +17,17 @@ import getComponent from '../../../helpers/get-component';
 //--------------------------| Component
 
 const HomePage = props => (
-  <div className="pt-homepage">
-    <header className="pt-homepage--header">
+  <div className={styles.root}>
+    <header className={styles.header}>
       {getComponent(props.children, 'header')}
     </header>
 
-    <main className="pt-homepage--main">
-      <section className="pt-homepage--section">
+    <main className={styles.main}>
+      <section className={styles.section}>
         {getComponent(props.children, 'main')}
       </section>
 
-      <section className="pt-homepage--section">
+      <section className={styles.section}>
         {getComponent(props.children, 'section')}
       </section>
     </main>

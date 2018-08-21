@@ -2,10 +2,9 @@
 // APP
 
 
-#app {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   @include font-smoothing();
   @include box-shadow(0 0 80em -2em map-get($reg-colors, 'dark-silver'));
   @include user-select(none);
@@ -21,6 +20,4 @@
   @include mq-screens-big-landscape() {
     display: block;
   }
-
-
-} // #app
+}

@@ -2,45 +2,39 @@
 // CONTROLLERS
 
 
-.po-controllers {
+//--------------------------| Variables
 
-  //--------------------------| Variables
-
-  $offset: get-em-unit(map-get($roles-offsets, 'controllers'));
+$offset: get-em-unit(map-get($roles-offsets, 'controllers'));
 
 
-  //--------------------------| Base
+//--------------------------| Root
 
+.root {
   padding: $offset;
   background-color: map-get($reg-backgrounds, 'pale-silver');
-
-
-  //--------------------------| Flexbox
 
   > .flex {
     @include justify-content(center);
   }
+}
 
 
-  //--------------------------| Columns
+//--------------------------| Columns
 
-  .column:not(:nth-child(2)) {
-    @include flex(1);
+.column {
+  max-width: 13.4em;
+
+  > div + div {
+    margin-top: $offset;
   }
+}
 
-  .column:nth-child(2) {
-    @include align-self(center);
+.column:not(:nth-child(2)) {
+  @include flex(1);
+}
 
-    padding: 0 1em;
-  }
+.column:nth-child(2) {
+  @include align-self(center);
 
-  .column {
-    max-width: 13.4em;
-
-    > div + div {
-      margin-top: $offset;
-    }
-  }
-
-
-} // .po-controllers
+  padding: 0 1em;
+}

@@ -2,9 +2,9 @@
 // HEADER
 
 
-//--------------------------| Body
+//--------------------------| Root
 
-.po-header {
+.root {
   padding: get-em-unit(map-get($reg-offsets, '05')) get-em-unit(map-get($roles-offsets, 'header'));
   font-size: map-get($roles-typo-font-sizes, 'app-title');
   background-color: map-get($reg-backgrounds, 'dirty-white');

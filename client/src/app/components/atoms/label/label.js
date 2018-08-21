@@ -8,14 +8,14 @@
 import React from 'react';
 
 // Styles
-import './label.scss';
+import styles from './label.scss';
 
 
 //--------------------------| Component
 
-const Label = props => (
-  <label className="pa-label">
-    {props.text}
+const Label = ({ text }) => (
+  <label className={styles.root}>
+    {text}
   </label>
 );
 

@@ -2,27 +2,26 @@
 // SWITCHER
 
 
-.pa-switcher {
+//--------------------------| Data
 
-  //--------------------------| Data
-
-  $roles: 'main' 'lights' 'outlets' 'unknown' 'cooking' 'laundry' 'boiler';
+$roles: 'main' 'lights' 'outlets' 'unknown' 'cooking' 'laundry' 'boiler';
 
 
-  //--------------------------| Variables
+//--------------------------| Variables
 
-  $wing-width: get-em-unit($roles-size-switcher-width);
-  $lever-height: 1em;
-  $hover-color: map-get($reg-colors, 'orange-light');
-  $marked-color: map-get($reg-colors, 'graphite');
-  $selected-color: map-get($reg-colors, 'graphite');
-  $shadow: 0 0 .4em map-get($reg-colors, 'graphite');
-  $transition: all map-get($roles-transitions, 'glow') ease-in-out;
+$wing-width: get-em-unit($roles-size-switcher-width);
+$lever-height: 1em;
+$hover-color: map-get($reg-colors, 'orange-light');
+$marked-color: map-get($reg-colors, 'graphite');
+$selected-color: map-get($reg-colors, 'graphite');
+$shadow: 0 0 0.4em map-get($reg-colors, 'graphite');
+$transition: all map-get($roles-transitions, 'glow') ease-in-out;
 
 
-  //--------------------------| Base
+//--------------------------| Root
 
-  @include border-radius(.15em);
+.root {
+  @include border-radius(0.15em);
   @include transition($transition);
 
   position: relative;
@@ -35,151 +34,152 @@
     cursor: pointer;
   }
 
-
-  //--------------------------| Wings
-
-  @each $wing in 1 2 3 {
-    $gap: if($wing == 1, 0, $wing / 2);
-
-    &[data-wings='#{$wing}'] {
-      width: get-em-unit(($roles-size-switcher-width + $gap) * $wing);
-    }
-  }
-
-
-  //--------------------------| Background
-
-  &:not(.black) {
+  // Background
+  &:not([data-color='black']) {
     @include background-image(map-get($reg-gradients, 'pale-silver'));
   }
 
-  &.black {
+  &[data-color='black'] {
     @include background-image(map-get($reg-gradients, 'dark-silver'));
   }
+}
 
 
-  //--------------------------| Lever
+//--------------------------| Wings
 
-  .lever {
-    @include translateY(-#{$lever-height/2});
-    @include transition($transition);
+@each $wing in 1 2 3 {
+  $gap: if($wing == 1, 0, $wing / 2);
 
-    position: absolute;
-    top: 50%;
-    left: -1px;
-    width: $wing-width;
-    padding: 0 .14em;
-
-    .bar {
-      @include border-radius(.15em);
-
-      display: block;
-      height: 100%;
-    }
+  .root[data-wings='#{$wing}'] {
+    width: get-em-unit(($roles-size-switcher-width + $gap) * $wing);
   }
+}
 
-  &:not(.fat) .lever {
+
+//--------------------------| Lever
+
+.lever {
+  @include translateY(-#{$lever-height/2});
+  @include transition($transition);
+
+  position: absolute;
+  top: 50%;
+  left: -1px;
+  width: $wing-width;
+  padding: 0 0.14em;
+
+  .root:not([data-weight='fat']) & {
     height: $lever-height;
   }
 
-  &.fat .lever {
+  .root[data-weight='fat'] & {
     height: $lever-height * 2;
   }
 
-  &:not(.black) .lever .bar {
-    @include background-image(map-get($reg-gradients, 'orange'));
-  }
-
-  &.black .lever .bar {
-    @include background-image(map-get($reg-gradients, 'black'));
-  }
-
-  &[data-role='main'] .lever {
+  .root[data-role='main'] & {
     left: 0;
     width: 100%;
   }
+}
 
 
-  //--------------------------| Label
+//--------------------------| Bar
 
-  .pa-meta {
+.bar {
+  @include border-radius(0.15em);
+
+  display: block;
+  height: 100%;
+
+  .root:not([data-color='black']) .lever & {
+    @include background-image(map-get($reg-gradients, 'orange'));
+  }
+
+  .root[data-color='black'] .lever & {
+    @include background-image(map-get($reg-gradients, 'black'));
+  }
+}
+
+
+//--------------------------| Label
+
+.label {
+  position: absolute;
+  right: 0;
+  bottom: 0.1em;
+  left: 0;
+  text-align: center;
+}
+
+
+//--------------------------| Roles
+
+.root[data-role] {
+  &::before {
+    $size: 1em;
+
+    @include transition($transition);
+    @include translateX(-50%);
+    @include opacity(0);
+
     position: absolute;
-    right: 0;
-    bottom: .1em;
-    left: 0;
-    text-align: center;
+    top: 0.2em;
+    left: 50%;
+    width: $size;
+    height: $size;
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
   }
+}
 
+@each $role in $roles {
+  $url: '../../../../assets/icons/#{$role}.svg';
 
-  //--------------------------| Roles
-
-  &[data-role] {
+  &[data-role='#{$role}'] {
     &::before {
-      $size: 1em;
-
-      @include transition($transition);
-      @include translateX(-50%);
-      @include opacity(0);
-
-      position: absolute;
-      top: .2em;
-      left: 50%;
-      width: $size;
-      height: $size;
-      content: '';
-      background-repeat: no-repeat;
-      background-position: center;
+      background-image: url($url);
     }
   }
+}
 
-  @each $role in $roles {
-    $url: '../../../../assets/icons/#{$role}.svg';
 
-    &[data-role='#{$role}'] {
-      &::before {
-        background-image: url($url);
-      }
-    }
+//--------------------------| States
+
+.root.marked {
+  @include box-shadow($shadow);
+
+  border-color: $marked-color;
+
+  &::before {
+    @include opacity(0.5);
   }
 
+  .lever {
+    @include translateY(-#{$lever-height * 1.2});
+  }
+}
 
-  //--------------------------| States
+.root.selected {
+  border-color: $selected-color;
 
-  &.marked {
-    @include box-shadow($shadow);
-
-    border-color: $marked-color;
-
-    &::before {
-      @include opacity(.5);
-    }
-
-    .lever {
-      @include translateY(-#{$lever-height * 1.2});
-    }
+  &::before {
+    @include opacity(0.5);
   }
 
-  &.selected {
-    border-color: $selected-color;
-
-    &::before {
-      @include opacity(.5);
-    }
-
-    .lever {
-      @include translateY(-#{$lever-height * 1.2});
-    }
+  .lever {
+    @include translateY(-#{$lever-height * 1.2});
   }
+}
 
-  @media (hover: hover) {
+@media (hover: hover) {
+  .root {
     &:hover {
       border-color: $hover-color;
 
       &::before {
-        @include opacity(.5);
+        @include opacity(0.5);
       }
     }
   }
-
-
-} // .pa-switcher
+}

@@ -11,9 +11,9 @@ import CustomScroll from 'react-custom-scroll';
 
 // Styles
 import 'react-custom-scroll/dist/customScroll.css';
-import './controllers.scss';
-import '../../../../styles/tokens/tokens_flexbox.scss';
 import '../../../../styles/external/custom-scrollbar.scss';
+import flexbox from '../../../../styles/tokens/tokens_flexbox.scss';
+import styles from './controllers.scss';
 
 // Atoms
 import Label from '../../atoms/label';
@@ -28,9 +28,9 @@ import ButtonGroup from '../../molecules/button-group';
 const Controllers = props => (
   <div style={{ flex: 1, minHeight: 0, minWidth: 0 }}>
     <CustomScroll heightRelativeToParent='100%'>
-      <div className="po-controllers">
-        <div className="flex">
-          <div className="column">
+      <div className={styles.root}>
+        <div className={`${styles.flex} ${flexbox.flex}`}>
+          <div className={styles.column}>
             <div data-role='devices'>
               <Label text='Device' />
               <ButtonGroup
@@ -40,11 +40,11 @@ const Controllers = props => (
             </div>
           </div>
 
-          <div className="column">
+          <div className={styles.column}>
             <Meta text='or' />
           </div>
 
-          <div className="column">
+          <div className={styles.column}>
             <div data-role='rooms'>
               <Label text='Room' />
               <ButtonGroup

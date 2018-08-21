@@ -8,14 +8,14 @@
 import React from 'react';
 
 // Styles
-import './meta.scss';
+import styles from './meta.scss';
 
 
 //--------------------------| Component
 
-const Meta = props => (
-  <label className="pa-meta">
-    {props.text}
+const Meta = ({ text, className }) => (
+  <label className={`${styles.root} ${className}`}>
+    {text}
   </label>
 );
 

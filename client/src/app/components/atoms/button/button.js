@@ -10,7 +10,7 @@ import classNames from 'classnames';
 import { connect } from 'react-redux';
 
 // Styles
-import './button.scss';
+import styles from './button.scss';
 
 // Actions
 import { markSwitcher } from '../../../actions/switchers';
@@ -21,19 +21,26 @@ import { selectRoom } from '../../../actions/rooms';
 //--------------------------| Component
 
 const Button = (props) => {
-  const classes = classNames('pa-button', {
-    marked: props.marked,
-    selected: props.selected
+  const {
+    marked,
+    selected,
+    className,
+    title,
+    dispatch
+  } = props;
+  const classes = classNames(styles.root, className, {
+    [styles.marked]: marked,
+    [styles.selected]: selected
   });
 
   return (
     <a className={classes} onClick={() => {
-      props.dispatch(selectDevice(props));
-      props.dispatch(selectRoom(props));
-      props.dispatch(markSwitcher(props));
+      dispatch(selectDevice(props));
+      dispatch(selectRoom(props));
+      dispatch(markSwitcher(props));
     }}>
     <span>
-      {props.title}
+      {title}
     </span>
     </a>
   );

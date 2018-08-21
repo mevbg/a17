@@ -11,7 +11,7 @@ import { hot } from 'react-hot-loader';
 import React from 'react';
 
 // Styles
-import './app.scss';
+import styles from './app.scss';
 
 // Organisms
 import Header from './components/organisms/header';
@@ -25,7 +25,7 @@ import HomePage from './components/templates/homepage';
 //--------------------------| Component
 
 const App = () => (
-  <div id="app">
+  <div className={styles.root}>
     <HomePage>
       <Header key='header' />
       <Board key='main' />

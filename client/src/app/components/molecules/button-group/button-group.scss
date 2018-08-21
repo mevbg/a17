@@ -2,26 +2,17 @@
 // BUTTON GROUP
 
 
-.pm-button-group {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   padding: 0;
   margin: 0;
-
-
-  //--------------------------| Items
 
   .item {
     list-style: none;
   }
 
-
-  //--------------------------| Buttons
-
-  .pa-button {
+  .button {
     display: block;
   }
-
-
-} // .pm-button-group
+}

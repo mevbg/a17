@@ -2,12 +2,9 @@
 // LABEL
 
 
-.pa-label {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   font-size: map-get($roles-typo-font-sizes, 'label');
   line-height: 2em;
-
-
-} // .pa-label
+}

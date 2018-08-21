@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Styles
-import './header.scss';
+import styles from './header.scss';
 
 // Data
 import pkg from '../../../../../../package.json';
@@ -19,7 +19,7 @@ import pkg from '../../../../../../package.json';
 const title = pkg.title.split(' ');
 
 const Header = () => (
-  <div className="po-header">
+  <div className={styles.root}>
     <span>{title[0]} <strong>{title[1]}</strong></span>
   </div>
 );

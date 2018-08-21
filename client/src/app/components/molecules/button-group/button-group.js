@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Styles
-import './button-group.scss';
+import styles from './button-group.scss';
 
 // Atoms
 import Button from '../../atoms/button';
@@ -17,10 +17,11 @@ import Button from '../../atoms/button';
 //--------------------------| Component
 
 const ButtonGroup = props => (
-  <ul className="pm-button-group">
-    { props.items.map((item, index) => (
-      <li className='item' key={item.name}>
+  <ul className={styles.root}>
+    { props.items.map(item => (
+      <li className={styles.item} key={item.name}>
         <Button
+          className={styles.button}
           group={props.group}
           {...item}
         />

@@ -10,7 +10,7 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 
 // Styles
-import './board.scss';
+import styles from './board.scss';
 
 // Molecules
 import BoardLevel from '../../molecules/board-level';
@@ -22,7 +22,7 @@ const Board = (props) => {
   const levels = props.switchers.map(e => e.level).filter((e, i, a) => i === a.indexOf(e));
 
   return (
-    <div className="po-board">
+    <div className={styles.root}>
       {
         levels.map((level, index) => (
           <BoardLevel

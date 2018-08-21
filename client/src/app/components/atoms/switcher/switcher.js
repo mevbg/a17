@@ -10,7 +10,7 @@ import classNames from 'classnames';
 import { connect } from 'react-redux';
 
 // Styles
-import './switcher.scss';
+import styles from './switcher.scss';
 
 // Actions
 import { selectSwitcher } from '../../../actions/switchers';
@@ -24,27 +24,36 @@ import Meta from '../meta';
 //--------------------------| Component
 
 const Switcher = (props) => {
-  const classes = classNames('pa-switcher', {
-    fat: props.features && props.features.indexOf('fat') !== -1,
-    black: props.features && props.features.indexOf('black') !== -1,
-    marked: props.marked,
-    selected: props.selected
+  const {
+    features,
+    marked,
+    selected,
+    wings,
+    role,
+    label,
+    dispatch
+  } = props;
+  const classes = classNames(styles.root, {
+    [styles.marked]: marked,
+    [styles.selected]: selected
   });
 
   return (
     <a
       className={classes}
-      data-wings={props.wings}
-      data-role={props.role.name}
-      title={props.role.title}
+      data-weight={features && features.indexOf('fat') !== -1 ? 'fat' : ''}
+      data-color={features && features.indexOf('black') !== -1 ? 'black' : ''}
+      data-wings={wings}
+      data-role={role.name}
+      title={role.title}
       onClick={() => {
-        props.dispatch(selectSwitcher(props));
-        props.dispatch(markDevice(props));
-        props.dispatch(markRoom(props));
+        dispatch(selectSwitcher(props));
+        dispatch(markDevice(props));
+        dispatch(markRoom(props));
       }}
     >
-      <span className='lever'><span className='bar'></span></span>
-      <Meta text={props.label} />
+      <span className={styles.lever}><span className={styles.bar} /></span>
+      <Meta className={styles.label} text={label} />
     </a>
   );
 };

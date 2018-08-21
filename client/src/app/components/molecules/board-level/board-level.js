@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Styles
-import './board-level.scss';
+import styles from './board-level.scss';
 
 // Atoms
 import Switcher from '../../atoms/switcher';
@@ -16,11 +16,11 @@ import Switcher from '../../atoms/switcher';
 
 //--------------------------| Component
 
-const BoardLevel = props => (
-  <div className='pm-board-level'>
+const BoardLevel = ({ switchers }) => (
+  <div className={styles.root}>
     {
-      props.switchers.map((switcher, index) => (
-        <div key={index} className="pm-board-level--item">
+      switchers.map((switcher, index) => (
+        <div key={index} className={styles.item}>
           <Switcher
             {...switcher}
           />

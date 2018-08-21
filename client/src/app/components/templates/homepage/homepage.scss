@@ -2,22 +2,19 @@
 // HOME PAGE
 
 
-.pt-homepage {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   @include display-flex();
   @include flex-direction(column);
 
   height: 100vh;
-
-
-} // .pt-homepage
+}
 
 
 //--------------------------| Main
 
-.pt-homepage--main {
+.main {
   @include display-flex();
   @include flex(1);
   @include flex-direction(column);
@@ -26,7 +23,7 @@
 
 //--------------------------| Section
 
-.pt-homepage--section:last-child {
+.section:last-child {
   @include display-flex();
   @include flex-direction(column);
   @include flex(1);

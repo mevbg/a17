@@ -2,30 +2,29 @@
 // BUTTON
 
 
-.pa-button {
+//--------------------------| Variables
 
-  //--------------------------| Variables
-
-  $btn-font-size: map-get($roles-typo-font-sizes, 'button');
-  $link-color: map-get($roles-col-links, 'link');
-  $white-color: map-get($reg-backgrounds, 'white');
-  $hover-color: rgba($link-color, .7);
-  $marked-color: map-get($reg-colors, 'yellow');
-  $selected-color: $link-color;
-  $shadow: 1px 1px 1px map-get($reg-colors, 'graphite');
+$btn-font-size: map-get($roles-typo-font-sizes, 'button');
+$link-color: map-get($roles-col-links, 'link');
+$white-color: map-get($reg-backgrounds, 'white');
+$hover-color: rgba($link-color, 0.7);
+$marked-color: map-get($reg-colors, 'yellow');
+$selected-color: $link-color;
+$shadow: 1px 1px 1px map-get($reg-colors, 'graphite');
 
 
-  //--------------------------| Base
+//--------------------------| Root
 
+.root {
   display: inline-block;
-  padding: .1em 0;
+  padding: 0.1em 0;
   text-align: left;
   white-space: nowrap;
   cursor: pointer;
 
   > span {
     @include transition(all map-get($roles-transitions, 'glow') ease-in-out);
-    @include border-radius(.2em);
+    @include border-radius(0.2em);
 
     display: block;
     padding: 0 1em;
@@ -33,25 +32,6 @@
     line-height: 2em;
     color: $link-color;
     background-color: map-get($reg-backgrounds, 'white');
-  }
-
-
-  //--------------------------| States
-
-  &.marked {
-    > span {
-      @include box-shadow($shadow);
-
-      color: map-get($roles-col-texts, 'system');
-      background-color: $marked-color;
-    }
-  }
-
-  &.selected {
-    > span {
-      color: $white-color;
-      background-color: $selected-color;
-    }
   }
 
   @media (hover: hover) {
@@ -62,6 +42,23 @@
       }
     }
   }
+}
 
 
-} // .pa-button
+//--------------------------| States
+
+.root.marked {
+  > span {
+    @include box-shadow($shadow);
+
+    color: map-get($roles-col-texts, 'system');
+    background-color: $marked-color;
+  }
+}
+
+.root.selected {
+  > span {
+    color: $white-color;
+    background-color: $selected-color;
+  }
+}
