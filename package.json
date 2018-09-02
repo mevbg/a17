@@ -5,7 +5,7 @@
   "description": "Home electrical distribution board",
   "main": "index.js",
   "scripts": {
-    "start": "npm i && npm run serve:dev",
+    "start": "yarn install && yarn run serve:dev",
     "build": "node client/build",
     "serve:dev": "node server/dev",
     "serve:prod": "node client/build && node server/prod"
