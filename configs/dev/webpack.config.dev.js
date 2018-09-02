@@ -139,10 +139,7 @@ const config = {
       title: pkg.title.split(' ')[0]
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    })
+    new webpack.optimize.OccurrenceOrderPlugin()
   ],
   devtool: 'cheap-module-eval-source-map'
 };
