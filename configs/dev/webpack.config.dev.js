@@ -8,6 +8,8 @@ const glob = require('glob');
 const path = require('path');
 const loaders = glob.sync(`${__dirname}/loaders/**/*.js`).map(file => require( path.resolve( file ) ));
 const plugins = glob.sync(`${__dirname}/plugins/**/*.js`).map(file => require( path.resolve( file ) ));
+const commonLoaders = glob.sync(`${__dirname}/../common/loaders/**/*.js`).map(file => require( path.resolve( file ) ));
+const commonPlugins = glob.sync(`${__dirname}/../common/plugins/**/*.js`).map(file => require( path.resolve( file ) ));
 const { ports } = require('../../package.json');
 
 
@@ -21,9 +23,9 @@ const config = {
     `./client/src/index.js`
   ],
   module: {
-    rules: loaders
+    rules: [...loaders, ...commonLoaders]
   },
-  plugins,
+  plugins: [...plugins, ...commonPlugins],
   devtool: 'cheap-module-eval-source-map'
 };
 

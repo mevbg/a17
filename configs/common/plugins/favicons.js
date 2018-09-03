@@ -1,5 +1,5 @@
 //====================================================|
-// WEBPACK PROD PLUGINS: FAVICONS
+// WEBPACK COMMON PLUGINS: FAVICONS
 
 
 //--------------------------| Import

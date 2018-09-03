@@ -1,5 +1,5 @@
 //====================================================|
-// WEBPACK DEV LOADERS: ICONS
+// WEBPACK COMMON LOADERS: ICONS
 
 
 //--------------------------| Export

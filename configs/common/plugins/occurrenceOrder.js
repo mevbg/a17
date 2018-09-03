@@ -1,5 +1,5 @@
 //====================================================|
-// WEBPACK DEV PLUGINS: OCCURRENCE ORDER
+// WEBPACK COMMON PLUGINS: OCCURRENCE ORDER
 
 
 //--------------------------| Import
