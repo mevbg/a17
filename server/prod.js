@@ -8,6 +8,7 @@ const path = require('path');
 const opn = require('opn');
 const express = require('express');
 const pkg = require('../package.json');
+const chalk = require('chalk');
 
 
 //--------------------------| Define
@@ -30,7 +31,7 @@ app.get('*', (req, res) => {
 //--------------------------| Initialize
 
 app.listen(port, () => {
-  console.log('Server is up!');
+  console.log(chalk.green('Server is up!'));
 
   opn(`http://localhost:${port}`, {
     app: browser

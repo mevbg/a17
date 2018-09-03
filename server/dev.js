@@ -9,6 +9,7 @@ const WebpackDevServer = require('webpack-dev-server');
 const opn = require('opn');
 const webpackConfig = require('../configs/dev/webpack.config.dev');
 const pkg = require('../package.json');
+const chalk = require('chalk');
 
 
 //--------------------------| Define
@@ -45,7 +46,7 @@ server.listen(port, 'localhost', function (err) {
     console.log(err);
   }
 
-  console.log(`Listening at localhost:${port}`);
+  console.log(chalk.green(`Listening at localhost:${port}`));
 
   opn(`http://localhost:${port}`, {
     app: browser
