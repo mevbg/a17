@@ -1,17 +1,15 @@
 //====================================================|
-// WEBPACK PROD PLUGINS: MINI CSS EXTRACT
+// WEBPACK COMMON PLUGINS: MD5 HASH
 
 
 //--------------------------| Import
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const WebpackMd5Hash = require('webpack-md5-hash');
 
 
 //--------------------------| Configuration
 
-const plugin = new MiniCssExtractPlugin({
-  filename: "app.[chunkhash].css"
-});
+const plugin = new WebpackMd5Hash();
 
 
 //--------------------------| Export

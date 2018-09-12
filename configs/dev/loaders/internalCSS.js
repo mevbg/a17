@@ -14,7 +14,10 @@ module.exports = {
   exclude: /node_modules/,
   use: [
     {
-      loader: 'style-loader' // creates style nodes from JS strings,
+      loader: 'style-loader', // compiles Sass to CSS (required due to Hot Module Replacement)
+      options: {
+        sourceMap: true
+      }
     },
     {
       loader: 'css-loader', // translates CSS into CommonJS
@@ -23,6 +26,15 @@ module.exports = {
         sourceMap: true,
         camelCase: 'dashes',
         localIdentName: '[name]__[local]__[hash:base64:5]'
+      }
+    },
+    {
+      loader: 'postcss-loader',
+      options: {
+        config: {
+          path: './postcss.config.js'
+        },
+        sourceMap: true
       }
     },
     {

@@ -5,8 +5,8 @@
 //--------------------------| Root
 
 .root {
-  @include display-flex();
-  @include justify-content(center);
+  display: flex;
+  justify-content: center;
 
   + .root {
     margin-top: 1em;

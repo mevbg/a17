@@ -14,7 +14,7 @@ $offset: get-em-unit(map-get($roles-offsets, 'controllers'));
   background-color: map-get($reg-backgrounds, 'pale-silver');
 
   > .flex {
-    @include justify-content(center);
+    justify-content: center;
   }
 }
 
@@ -30,11 +30,10 @@ $offset: get-em-unit(map-get($roles-offsets, 'controllers'));
 }
 
 .column:not(:nth-child(2)) {
-  @include flex(1);
+  flex: 1;
 }
 
 .column:nth-child(2) {
-  @include align-self(center);
-
+  align-self: center;
   padding: 0 1em;
 }

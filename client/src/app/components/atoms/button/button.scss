@@ -23,15 +23,14 @@ $shadow: 1px 1px 1px map-get($reg-colors, 'graphite');
   cursor: pointer;
 
   > span {
-    @include transition(all map-get($roles-transitions, 'glow') ease-in-out);
-    @include border-radius(0.2em);
-
     display: block;
     padding: 0 1em;
     font-size: $btn-font-size;
     line-height: 2em;
     color: $link-color;
     background-color: map-get($reg-backgrounds, 'white');
+    border-radius: 0.2em;
+    transition: all map-get($roles-transitions, 'glow') ease-in-out;
   }
 
   @media (hover: hover) {
@@ -49,10 +48,9 @@ $shadow: 1px 1px 1px map-get($reg-colors, 'graphite');
 
 .root.marked {
   > span {
-    @include box-shadow($shadow);
-
     color: map-get($roles-col-texts, 'system');
     background-color: $marked-color;
+    box-shadow: $shadow;
   }
 }
 

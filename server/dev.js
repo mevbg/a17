@@ -7,9 +7,9 @@
 const Webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const opn = require('opn');
+const chalk = require('chalk');
 const webpackConfig = require('../configs/dev/webpack.config.dev');
 const pkg = require('../package.json');
-const chalk = require('chalk');
 
 
 //--------------------------| Define

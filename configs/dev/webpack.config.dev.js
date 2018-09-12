@@ -26,7 +26,7 @@ const config = {
     rules: [...loaders, ...commonLoaders]
   },
   plugins: [...plugins, ...commonPlugins],
-  devtool: 'cheap-module-eval-source-map'
+  devtool: 'inline-source-map'
 };
 
 

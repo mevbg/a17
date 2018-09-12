@@ -12,10 +12,18 @@
 //    we force a non-overlapping, non-auto-hiding scrollbar to counteract.
 // 6. Change the default tap highlight to be completely transparent in iOS.
 
+
+//--------------------------| Normalize
+
+@import 'normalize.css';
+
+
+//--------------------------| Box model
+
 *,
 *::before,
 *::after {
-  @include box-sizing(border-box); // 1
+  box-sizing: border-box; // 1
 }
 
 
@@ -43,9 +51,9 @@ html {
 }
 
 body {
-  @include display-flex();
-  @include flex-direction(column);
-  @include justify-content(center);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   min-height: 100vh;
   background-color: map-get($reg-backgrounds, 'black');
