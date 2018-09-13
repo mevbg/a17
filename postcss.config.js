@@ -17,7 +17,8 @@ const plugins = [
   // convert pixel units to rem (root em) units
   require('postcss-pxtorem')({
     rootValue: 10,
-    unitPrecision: 2
+    unitPrecision: 2,
+    selectorBlackList: ['html']
   }),
 
   // create smooth linear-gradients that approximate easing functions
