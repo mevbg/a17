@@ -40,6 +40,10 @@
 
   "devices": [
     {
+      "name": "heating_system",
+      "title": "Heating system"
+    },
+    {
       "name": "boiler",
       "title": "Water heater"
     },
@@ -206,9 +210,15 @@
       "label": "C25",
       "features": ["fat", "black"],
       "role": {
-        "name": "unknown",
-        "title": "Unknown functionality"
-      }
+        "name": "heating",
+        "title": "Heating system"
+      },
+      "rooms": [
+        "closet"
+      ],
+      "devices": [
+        "heating_system"
+      ]
     },
     {
       "id": "level2_switcher4",
