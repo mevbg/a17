@@ -10,16 +10,16 @@
     "serve:dev": "node server/dev",
     "serve:prod": "node client/build && node server/prod"
   },
-  "homepage": "http://a17.martinmetodiev.com",
+  "homepage": "https://a17.metodiev.dev",
   "author": {
     "name": "Martin Metodiev",
     "email": "metodiev.martin@gmail.com",
-    "url": "http://www.martinmetodiev.com"
+    "url": "https://metodiev.dev"
   },
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git://github.com/martinmethod/a17.git"
+    "url": "git://github.com/methodev/a17.git"
   },
   "ports": {
     "dev": 8000,
