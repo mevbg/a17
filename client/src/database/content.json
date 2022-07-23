@@ -148,6 +148,9 @@
         "living_room",
         "bedroom",
         "kinder_room"
+      ],
+      "devices": [
+        "air_con"
       ]
     },
     {
