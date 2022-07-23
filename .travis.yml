@@ -1,26 +1,26 @@
 language: node_js
 node_js:
-- 14
+  - 16
 script:
-- npm install
-- npm run build
-- printf '.gitignore\ndeployed*' > client/dist/.gitignore
-- printf 'a17.metodiev.dev' > client/dist/CNAME
-- cp 'README.md' client/dist
+  - yarn install
+  - yarn build
+  - printf '.gitignore\ndeployed*' > client/dist/.gitignore
+  - printf 'a17.metodiev.dev' > client/dist/CNAME
+  - cp 'README.md' client/dist
 branches:
   only:
-  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 deploy:
-- provider: releases
-  api_key: $GITHUB_TOKEN
-  skip_cleanup: true
-  file:
-  - 'production.zip'
-  on:
-    tags: true
-- provider: pages
-  skip_cleanup: true
-  local_dir: client/dist
-  github_token: $GITHUB_TOKEN
-  on:
-    tags: true
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    skip_cleanup: true
+    file:
+      - "production.zip"
+    on:
+      tags: true
+  - provider: pages
+    skip_cleanup: true
+    local_dir: client/dist
+    github_token: $GITHUB_TOKEN
+    on:
+      tags: true
