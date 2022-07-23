@@ -48,6 +48,10 @@
       "title": "Water heater"
     },
     {
+      "name": "air_con",
+      "title": "Air conditioner"
+    },
+    {
       "name": "hobs",
       "title": "Hobs"
     },
@@ -137,9 +141,14 @@
       "level": 1,
       "label": "C16",
       "role": {
-        "name": "unknown",
-        "title": "Unknown functionality"
-      }
+        "name": "air_con",
+        "title": "Air conditioners"
+      },
+      "rooms": [
+        "living_room",
+        "bedroom",
+        "kinder_room"
+      ]
     },
     {
       "id": "level1_switcher5",
@@ -164,9 +173,12 @@
       "level": 1,
       "label": "C6",
       "role": {
-        "name": "unknown",
-        "title": "Unknown functionality"
-      }
+        "name": "panel",
+        "title": "Revision panel"
+      },
+      "rooms": [
+        "living_room"
+      ]
     },
 
     {
