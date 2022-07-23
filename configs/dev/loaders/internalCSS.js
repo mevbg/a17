@@ -14,18 +14,16 @@ module.exports = {
   exclude: /node_modules/,
   use: [
     {
-      loader: 'style-loader', // compiles Sass to CSS (required due to Hot Module Replacement)
-      options: {
-        sourceMap: true
-      }
+      loader: 'style-loader' // compiles Sass to CSS (required due to Hot Module Replacement)
     },
     {
       loader: 'css-loader', // translates CSS into CommonJS
       options: {
-        modules: true,
-        sourceMap: true,
-        camelCase: 'dashes',
-        localIdentName: '[name]__[local]__[hash:base64:5]'
+        modules: {
+          localIdentName: '[name]__[local]__[hash:base64:5]',
+          exportLocalsConvention: 'dashes'
+        },
+        sourceMap: true
       }
     },
     {
@@ -47,7 +45,7 @@ module.exports = {
       loader: 'sass-resources-loader',
       options: {
         resources
-      },
+      }
     }
   ]
 };
