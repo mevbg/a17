@@ -24,7 +24,24 @@ const config = {
   module: {
     rules: [...loaders, ...commonLoaders]
   },
-  plugins: [...plugins, ...commonPlugins]
+  plugins: [...plugins, ...commonPlugins],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true,
+            drop_debugger: true
+          },
+          output: {
+            comments: false
+          }
+        },
+        extractComments: false
+      })
+    ]
+  }
 };
 
 
