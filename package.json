@@ -67,7 +67,7 @@
     "html-webpack-plugin": "3.2.0",
     "opn": "^5.3.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "postcss": "^7.0.2",
+    "postcss": "^8.4.31",
     "postcss-color-function": "^4.0.1",
     "postcss-discard-comments": "^4.0.0",
     "postcss-easing-gradients": "^3.0.1",
